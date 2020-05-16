@@ -1,0 +1,74 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+  <body class="text-center">
+    <form id="sign-in-form" action="/account/sign_in/" class="form-signin" method="post" onsubmit="return true">
+      {% csrf_token %}
+
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+
+  <input type="text" name="inputUsername" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+  <span id="span-for-name" style="color: red"></span>
+  <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+  <span id="span-for-password" style="color: red">(Error)</span>
+
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+
+
+</body>
+<script>
+      let username = $("#inputUsername");
+      let span_for_name = $("#span-for-name");
+
+
+      username.blur(function(){
+          let username_to_test = username.val();
+              $.ajax({
+                url: "/account/ajax_username_to_test",
+                data: {"login": username_to_test},
+                dataType: "json",
+                success: function(result){
+                    if (result["result"] === "Exists"){
+                    span_for_name.text("");
+                    $('#sign-in-form').attr('onsubmit', 'return true');
+                    }
+                    if (result["result"] === "Free"){
+                    span_for_name.text("This name does not exist!!!");
+                    $("#sign-in-form").attr("onsubmit", "return false");
+                    }
+                }
+              });
+      });
+
+      let password = $("#inputPassword");
+      let span_for_password = $("#span-for-password");
+
+      password.blur(function(){
+          let password_to_test = password.val();
+              $.ajax({
+                  url: "/account/ajax_password_to_test",
+                  data: {"password": password_to_test},
+                  dataType: "json",
+                  success: function(result){
+                      if (result["result"] === "Exists"){
+                          span_for_password.text("");
+                      }
+                      if (result["result"] === "Free"){
+                          span_for_password.text("The password entered is not correct!!!");
+                      }
+                  }
+              });
+      });
+    </script>
+  <a href="/account/sign_up/" class="btn btn-lg btn-primary btn-block">Sign up</a>
+
+{% endblock %}
