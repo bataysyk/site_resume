@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from .models import UserFrom
 
-
 # Create your views here.
 def sign_in(request):
     if request.method == "GET":
