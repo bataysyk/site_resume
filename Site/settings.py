@@ -25,7 +25,7 @@ SECRET_KEY = '!twr@w@w(lkhp)tu7sff&_an59&lc$6gja^7ua#r#l!t%qw694'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 # ALLOWED_HOSTS = ['34.107.123.61']
 
@@ -141,3 +141,16 @@ STATIC_ROOT = [
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# CELERY_BROKER_URL = 'redis://h:p35dfc08bb5d2a659e408bc61dec2d58d0ed77ae61b5cd60e30d48b43e7ff7944@ec2-3-222-186-102.compute-1.amazonaws.com:11459'
+# BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587                    #465
+EMAIL_HOST_USER = 'bataysk55@gmail.com'
+EMAIL_HOST_PASSWORD = 'Snoopdoggjimcarrey1999'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True
