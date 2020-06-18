@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+################################################
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -141,6 +141,7 @@ STATIC_ROOT = [
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+<<<<<<< Updated upstream
 
 # CELERY_BROKER_URL = 'redis://h:p35dfc08bb5d2a659e408bc61dec2d58d0ed77ae61b5cd60e30d48b43e7ff7944@ec2-3-222-186-102.compute-1.amazonaws.com:11459'
 # BROKER_URL = 'amqp://guest:guest@localhost:5672/'
@@ -154,3 +155,5 @@ EMAIL_HOST_USER = 'bataysk55@gmail.com'
 EMAIL_HOST_PASSWORD = 'Snoopdoggjimcarrey1999'
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = True
+=======
+>>>>>>> Stashed changes
