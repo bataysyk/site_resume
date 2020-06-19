@@ -2,7 +2,7 @@ import sched
 import time
 
 from django.shortcuts import render, redirect
-# from ..tasks import send_email_task
+from .tasks import send_email_task
 from .models import PriceList
 
 
@@ -29,7 +29,7 @@ def report():
 
 
 def home(request):
-    # send_email_task()
+    send_email_task()
     return render(request, "home.html")
 
 

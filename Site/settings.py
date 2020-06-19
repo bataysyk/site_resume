@@ -27,7 +27,7 @@ DEBUG = True
 
 #ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['34.107.123.61']
+ALLOWED_HOSTS = ['havrylchyk.ddns.net']
 
 
 # Application definition
@@ -86,16 +86,16 @@ WSGI_APPLICATION = 'Site.wsgi.application'
 #    }
 #}
 
- DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': 'myproject',
-         'USER': 'myprojectuser',
-         'PASSWORD': 'password',
-         'HOST': 'localhost',
-         'PORT': '',
-     }
- }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 # Password validation
@@ -141,3 +141,23 @@ STATIC_ROOT = [
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+CELERY_BROKER_URL = "redis://localhost:6379"
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+CELERY_BEAT_SCHEDULE = {
+        'first-task': {
+        	'task': 'home.tasks.send_email_task',
+        	'schedule': 7200.0,
+	},
+}
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587                    #465
+EMAIL_HOST_USER = 'bataysk55@gmail.com'
+EMAIL_HOST_PASSWORD = 'Snoopdoggjimcarrey1999'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True
+
