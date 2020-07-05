@@ -1,7 +1,7 @@
 import sched
 import time
-
-from django.shortcuts import render, redirect, HttpResponse
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
 from .tasks import send_email_task
 from .models import PriceList
 
@@ -29,9 +29,14 @@ def report():
 
 
 def home(request):
-    send_email_task()
+    send_mail('Notification.',
+    'Someone just visited your site!!!',
+    'bataysk55@gmail.com',
+    ['bataysk55@gmail.com'])
+    send_email_task(
+)
     return render(request, "home.html")
-    #return HttpResponse("User not authenticate")
+
 
 
 

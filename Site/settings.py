@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!twr@w@w(lkhp)tu7sff&_an59&lc$6gja^7ua#r#l!t%qw694'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = []
 
@@ -150,8 +150,12 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_BEAT_SCHEDULE = {
         'first-task': {
         	'task': 'home.tasks.send_email_task',
-        	'schedule': 7200.0,
+        	'schedule': 2.0,
 	},
+	#'second-task': {
+         #       'task': 'home.tasks.send_email_task_2',
+         #       'schedule': 30.0,
+        #},
 }
 
 EMAIL_HOST = 'smtp.gmail.com'
