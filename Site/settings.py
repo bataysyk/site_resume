@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 ################################################
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -160,8 +159,72 @@ CELERY_BEAT_SCHEDULE = {
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587                    #465
-EMAIL_HOST_USER = 'bataysk55@gmail.com'
-EMAIL_HOST_PASSWORD = 'Snoopdoggjimcarrey1999'
+EMAIL_HOST_USER = '***********************'
+EMAIL_HOST_PASSWORD = '***********'
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = True
 
+#LOGGING = {
+#    'version': 1,
+#    'disable_existing_loggers': False,
+#    'handlers': {
+#        'file': {
+#            'level': 'DEBUG',
+#            'class': 'logging.FileHandler',
+#            'filename': '/home/bataysk55/my_site/debug.log',
+#        },
+#    },
+#    'loggers': {
+#        'django': {
+#            'handlers': ['file'],
+#            'level': 'DEBUG',
+#            'propagate': True,
+#        },
+#    },
+#    'handlers': {
+#        'file': {
+#            'level': 'INFO',
+#            'class': 'logging.StreamHandler',
+#            'filename': '/home/bataysk55/my_site/debug_2.log',
+#        },
+#    },
+#    'loggers': {
+#        'django': {
+#            'handlers': ['file'],
+#            'level': 'INFO',
+#            'propagate': True,
+#        },
+#    },
+#}
+import os
+
+LOGGING ={
+    'version':1,
+    'loggers':{
+        'django':{
+            'handlers':['file','file2'],
+            'level':'DEBUG'
+        }
+    },
+    'handlers':{
+        'file':{
+            'level':'INFO',
+            'class': 'logging.FileHandler',
+            'filename':'./logs/debug5.log',
+            'formatter':'simpleRe',
+        },
+        'file2':{
+            'level':'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename':'./logs/debug6.log',
+            'formatter':'simpleRe',
+        }
+    },
+    'formatters':{
+        'simpleRe': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        }
+
+    }
+}

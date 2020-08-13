@@ -1,0 +1,7 @@
+Aug 12 15:23:31 my-sever systemd[27982]: Reached target Sockets.
+Aug 12 15:23:31 my-sever systemd[27982]: Reached target Paths.
+Aug 12 15:23:31 my-sever systemd[27982]: Reached target Basic System.
+Aug 12 15:23:31 my-sever systemd[1]: Started User Manager for UID 1001.
+Aug 12 15:23:31 my-sever systemd[27982]: Reached target Default.
+Aug 12 15:23:31 my-sever systemd[27982]: Startup finished in 49ms.
+Aug 12 15:25:01 my-sever CRON[28165]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
