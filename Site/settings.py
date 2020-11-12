@@ -26,7 +26,7 @@ DEBUG = False
 
 #ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['havrylchyk.ddns.net']
+ALLOWED_HOSTS = ['35.198.124.18', 'havrylchyk.ddns.net']
 
 
 # Application definition
@@ -159,8 +159,8 @@ CELERY_BEAT_SCHEDULE = {
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587                    #465
-EMAIL_HOST_USER = '***********************'
-EMAIL_HOST_PASSWORD = '***********'
+EMAIL_HOST_USER = 'bataysk55@gmail.com'
+EMAIL_HOST_PASSWORD = 'Snoopdoggjimcarrey1999'
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = True
 

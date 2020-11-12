@@ -1,9 +1,8 @@
-#!/usr/bin/python3
+@site_management_bot@site_management_bot#!/usr/bin/python3
 import requests
-import time
 
 token = "1257749063:AAGmDm0SFvehxT4Y-1pw88Afezpep4zgtlk"
-chat_id_to = 425785607
+chat_id_to = @site_management_bot
 last_send_log = ""
 
 while True:
@@ -15,5 +14,3 @@ while True:
 		requests.get(f'https://api.telegram.org/bot{token}/sendMessage',
                  	{'chat_id': chat_id_to,
                   	'text': f'{"=" * 40 + last_send_log}'})
-	else:
-		time.sleep(60)

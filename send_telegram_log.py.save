@@ -1,0 +1,24 @@
+import requests
+
+token = "1257749063:AAGmDm0SFvehxT4Y-1pw88Afezpep4zgtlk"
+chat_id_to = 425785607
+message_test = "____LOG____"
+
+
+file = open(r"/home/bataysk55/my_site/logs/debug6.log", "r")
+text = file.read().split("/n")
+last_log = text[-5]
+for i in text[::-1]:
+	pri
+#print(text)
+#while True:
+#	text = file.read()
+#	for i in text:
+#		print(i)
+
+
+#if 
+#	while True:
+#    	requests.get(f'https://api.telegram.org/bot{token}/sendMessage',
+#                 	{'chat_id': chat_id_to,
+#                  	'text': f'{message_test}'})
